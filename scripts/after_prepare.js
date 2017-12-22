@@ -61,6 +61,9 @@ function updateStringsXml(contents) {
     strings = strings.replace(new RegExp('<string name="google_app_id" translatable="false">([^\@<]+?)</string>', 'i'), '');
     // strip non-default value
     strings = strings.replace(new RegExp('<string name="google_api_key" translatable="false">([^\@<]+?)</string>', 'i'), '');
+	 strings = strings.replace(new RegExp('<string name="google_app_id>([^\@<]+?)</string>', 'i'), '');
+    // strip non-default value
+    strings = strings.replace(new RegExp('<string name="google_api_key">([^\@<]+?)</string>', 'i'), '');
 	strings = strings.replace(new RegExp('<string name="gcm_defaultSenderId" translatable="false">([^\@<]+?)</string>', 'i'), '');
 	strings = strings.replace(new RegExp('<string name="google_crash_reporting_api_key" translatable="false">([^\@<]+?)</string>', 'i'), '');
 	strings = strings.replace(new RegExp('<string name="project_id" translatable="false">([^\@<]+?)</string>', 'i'), '');
@@ -68,7 +71,6 @@ function updateStringsXml(contents) {
     strings = strings.replace(new RegExp('(\r\n|\n|\r)[ \t]*(\r\n|\n|\r)', 'gm'), '$1');
     // replace the default value
     strings = strings.replace(new RegExp('<string name="google_app_id" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_app_id" translatable="false">' + json.client[0].client_info.mobilesdk_app_id + '</string>');
-    // replace the default value
     strings = strings.replace(new RegExp('<string name="google_api_key" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_api_key" translatable="false">' + json.client[0].api_key[0].current_key + '</string>');
     strings = strings.replace(new RegExp('<string name="gcm_defaultSenderId" translatable="false">([^<]+?)</string>', 'i'), '<string name="gcm_defaultSenderId" translatable="false">' + json.project_info.project_number + '</string>');
     strings = strings.replace(new RegExp('<string name="google_crash_reporting_api_key" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_crash_reporting_api_key" translatable="false">' + json.client[0].api_key[0].current_key + '</string>');
