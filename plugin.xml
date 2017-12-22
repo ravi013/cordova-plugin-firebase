@@ -29,8 +29,8 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 			<string name="firebase_database_url" translatable="false">@string/firebase_database_url</string>
 			<string name="gcm_defaultSenderId" translatable="false">@string/gcm_defaultSenderId</string>
 			<string name="google_crash_reporting_api_key" translatable="false">@string/google_crash_reporting_api_key</string>
-			<string name="google_storage_bucket" translatable="false">ice-production.appspot.com</string>
-			<string name="project_id" translatable="false">ice-production</string>
+			<string name="google_storage_bucket" translatable="false">@string/google_storage_bucket</string>
+			<string name="project_id" translatable="false">@string/project_id</string>
 		</config-file>
 		<config-file target="AndroidManifest.xml" parent="/*">
 				<uses-permission android:name="android.permission.INTERNET" />
