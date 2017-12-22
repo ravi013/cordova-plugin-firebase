@@ -21,10 +21,16 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 			</feature>
 		</config-file>
 		<config-file parent="/resources" target="res/values/strings.xml">
-			<string name="google_app_id">@string/google_app_id</string>
+			<string name="google_app_id" translatable="false">@string/google_app_id</string>
 		</config-file>
 		<config-file parent="/resources" target="res/values/strings.xml">
-			<string name="google_api_key">@string/google_api_key</string>
+			<string name="google_api_key" translatable="false">@string/google_api_key</string>
+			<string name="default_web_client_id" translatable="false">@string/default_web_client_id</string>
+			<string name="firebase_database_url" translatable="false">@string/firebase_database_url</string>
+			<string name="gcm_defaultSenderId" translatable="false">@string/gcm_defaultSenderId</string>
+			<string name="google_crash_reporting_api_key" translatable="false">@string/google_crash_reporting_api_key</string>
+			<string name="google_storage_bucket" translatable="false">ice-production.appspot.com</string>
+			<string name="project_id" translatable="false">ice-production</string>
 		</config-file>
 		<config-file target="AndroidManifest.xml" parent="/*">
 				<uses-permission android:name="android.permission.INTERNET" />

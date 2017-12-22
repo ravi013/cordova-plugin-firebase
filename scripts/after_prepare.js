@@ -58,19 +58,19 @@ function updateStringsXml(contents) {
     var strings = fs.readFileSync(PLATFORM.ANDROID.stringsXml).toString();
 
     // strip non-default value
-    strings = strings.replace(new RegExp('<string name="google_app_id">([^\@<]+?)</string>', 'i'), '');
+    strings = strings.replace(new RegExp('<string name="google_app_id" translatable="false">([^\@<]+?)</string>', 'i'), '');
  console.log('Preparing Firebase on strings',strings);
     // strip non-default value
-    strings = strings.replace(new RegExp('<string name="google_api_key">([^\@<]+?)</string>', 'i'), '');
+    strings = strings.replace(new RegExp('<string name="google_api_key" translatable="false">([^\@<]+?)</string>', 'i'), '');
  console.log('Preparing Firebase on strings',strings);
     // strip empty lines
     strings = strings.replace(new RegExp('(\r\n|\n|\r)[ \t]*(\r\n|\n|\r)', 'gm'), '$1');
  console.log('Preparing Firebase on strings',strings);
     // replace the default value
-    strings = strings.replace(new RegExp('<string name="google_app_id">([^<]+?)</string>', 'i'), '<string name="google_app_id" translatable="false">' + json.client[0].client_info.mobilesdk_app_id + '</string>');
+    strings = strings.replace(new RegExp('<string name="google_app_id" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_app_id" translatable="false">' + json.client[0].client_info.mobilesdk_app_id + '</string>');
  console.log('Preparing Firebase on strings',strings);
     // replace the default value
-    strings = strings.replace(new RegExp('<string name="google_api_key">([^<]+?)</string>', 'i'), '<string name="google_api_key" translatable="false">' + json.client[0].api_key[0].current_key + '</string>');
+    strings = strings.replace(new RegExp('<string name="google_api_key" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_api_key" translatable="false">' + json.client[0].api_key[0].current_key + '</string>');
   console.log('Preparing Firebase on strings',strings);
     fs.writeFileSync(PLATFORM.ANDROID.stringsXml, strings);
 }
