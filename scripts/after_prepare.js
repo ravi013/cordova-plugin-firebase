@@ -70,9 +70,9 @@ function updateStringsXml(contents) {
     strings = strings.replace(new RegExp('<string name="google_app_id" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_app_id" translatable="false">' + json.client[0].client_info.mobilesdk_app_id + '</string>');
     // replace the default value
     strings = strings.replace(new RegExp('<string name="google_api_key" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_api_key" translatable="false">' + json.client[0].api_key[0].current_key + '</string>');
-    strings = strings.replace(new RegExp('<string name="gcm_defaultSenderId" translatable="false">([^<]+?)</string>', 'i'), '<string name="gcm_defaultSenderId" translatable="false">' + json.project_number + '</string>');
+    strings = strings.replace(new RegExp('<string name="gcm_defaultSenderId" translatable="false">([^<]+?)</string>', 'i'), '<string name="gcm_defaultSenderId" translatable="false">' + json.project_info.project_number + '</string>');
     strings = strings.replace(new RegExp('<string name="google_crash_reporting_api_key" translatable="false">([^<]+?)</string>', 'i'), '<string name="google_crash_reporting_api_key" translatable="false">' + json.client[0].api_key[0].current_key + '</string>');
-    strings = strings.replace(new RegExp('<string name="project_id" translatable="false">([^<]+?)</string>', 'i'), '<string name="project_id" translatable="false">' + json.project_id + '</string>');
+    strings = strings.replace(new RegExp('<string name="project_id" translatable="false">([^<]+?)</string>', 'i'), '<string name="project_id" translatable="false">' + json.project_info.project_id + '</string>');
      
    fs.writeFileSync(PLATFORM.ANDROID.stringsXml, strings);
 }
